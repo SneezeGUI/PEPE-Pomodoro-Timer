@@ -10,9 +10,9 @@ RED = "#e7305b"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
-WORK_MIN = .25
-SHORT_BREAK_MIN = .25
-LONG_BREAK_MIN = .25
+WORK_MIN = 25
+SHORT_BREAK_MIN = 5
+LONG_BREAK_MIN = 20
 my_timer = 0
 reps = 0
 # ---------------------------- TIMER RESET ------------------------------- #
@@ -74,7 +74,7 @@ bg = Tk()
 lbl = ImageLabel(bg, borderwidth=0, highlightthickness=0)
 bg.title('PEPE POMODORO TIMER')
 lbl.grid(column=1,row=1)
-lbl.load('data/dj-pepe-black-small-crop.gif')
+lbl.load('_internal/data/dj-pepe-black-small-crop.gif')
 bg.config(bg='black', padx=5)
 bg.resizable(False, False)
 
@@ -103,7 +103,7 @@ check_label.config(bg='black',fg='green')
 
 ## SFX
 mixer.init()
-sound = mixer.Sound("data/El-Pepe.mp3")
+sound = mixer.Sound("_internal/data/El-Pepe.mp3")
 
 ##MAIN LOOP
 bg.mainloop()
