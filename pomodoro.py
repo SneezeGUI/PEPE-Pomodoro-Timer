@@ -20,6 +20,8 @@ def reset():
     global status
     global timer
     global reps
+    global all_checks
+    all_checks = []
     bg.after_cancel(my_timer)
     status.config(text='Idle...', font=(FONT_NAME, 15, 'bold'), bg='black', fg='white')
     timer.config(text=f'00:00', font=(FONT_NAME, 35, 'bold'), bg='black', fg='red')
