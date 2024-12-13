@@ -2,7 +2,8 @@ from tkinter import *
 from gif import ImageLabel
 import math
 from pygame import mixer
-
+import os
+import sys
 
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
@@ -22,6 +23,7 @@ def reset():
     global reps
     global all_checks
     all_checks = []
+    check_label.config(text=all_checks, bg='black', fg='green')
     bg.after_cancel(my_timer)
     status.config(text='Idle...', font=(FONT_NAME, 15, 'bold'), bg='black', fg='white')
     timer.config(text=f'00:00', font=(FONT_NAME, 35, 'bold'), bg='black', fg='red')
@@ -73,10 +75,15 @@ def countdown(count):
 # ---------------------------- UI SETUP ------------------------------- #
 ##GIF
 bg = Tk()
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base_path, relative_path)
+gif_path = resource_path('data/dj-pepe-black-small-crop.gif')
 lbl = ImageLabel(bg, borderwidth=0, highlightthickness=0)
 bg.title('PEPE POMODORO TIMER')
 lbl.grid(column=1,row=1)
-lbl.load('_internal/data/dj-pepe-black-small-crop.gif')
+lbl.load(gif_path)
 bg.config(bg='black', padx=5)
 bg.resizable(False, False)
 
@@ -105,7 +112,8 @@ check_label.config(bg='black',fg='green')
 
 ## SFX
 mixer.init()
-sound = mixer.Sound("_internal/data/El-Pepe.mp3")
+sound_path = resource_path('data/El-Pepe.mp3')
+sound = mixer.Sound(sound_path)
 
 ##MAIN LOOP
 bg.mainloop()
