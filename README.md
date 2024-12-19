@@ -3,15 +3,15 @@ It uses a kitchen timer to break work into intervals, typically 25 minutes in le
 from the Italian word for tomato, after the tomato-shaped kitchen timer Cirillo used as a university student.
 
 This just a graphical timer with some pep.
-
-1.work - 25 min
-2.break - 5 min
-3.work - 25 min
-4.break - 5 min
-5.work - 25 min
-6.break - 5 min
-7.work - 25 min
-8.break - 25 min
+- --Timer Steps---
+- 1.work - 25 min
+- 2.break - 5 min
+- 3.work - 25 min
+- 4.break - 5 min
+- 5.work - 25 min
+- 6.break - 5 min
+- 7.work - 25 min
+- 8.break - 25 min
 
 
 ![Alt Text](https://i.imgur.com/wZijZm0.gif)
